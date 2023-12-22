@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:payment_app/Core/Utiles/styles.dart';
 
 class MyCartView extends StatelessWidget {
@@ -8,7 +9,11 @@ class MyCartView extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: AppBar(
-        title: Text('My Cart',
+        backgroundColor: Colors.transparent,
+        leading:SvgPicture.asset('assets/images/Arrow 1.svg',),
+        elevation: 0,
+        centerTitle: true,
+        title:const Text('My Cart',
         textAlign: TextAlign.center,
         style: Styles.textStyle25,
       ),)
