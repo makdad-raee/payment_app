@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:payment_app/Core/Utiles/styles.dart';
+import 'package:payment_app/Features/Checkout/Presentation/Views/widgets/order_info_item.dart';
+import 'package:payment_app/Features/Checkout/Presentation/Views/widgets/total_price.dart';
 
 class MyCartViewBody extends StatelessWidget {
   const MyCartViewBody({super.key});
@@ -15,35 +16,32 @@ class MyCartViewBody extends StatelessWidget {
             height: 18,
           ),
           Image.asset('assets/images/basket_image.png'),
-          const SizedBox(height: 25,),
-         const OrderInfoItem(title: 'Order Subtotal',value:'\$42.97', ),
-         const SizedBox(height: 3,),
-        const  OrderInfoItem(title:'Discount' ,value:'\$0' ),
-        const SizedBox(height: 3,),
-         const OrderInfoItem(title: 'Shipping',value: '\$8'),
+          const SizedBox(
+            height: 25,
+          ),
+          const OrderInfoItem(
+            title: 'Order Subtotal',
+            value: '\$42.97',
+          ),
+          const SizedBox(
+            height: 3,
+          ),
+          const OrderInfoItem(title: 'Discount', value: '\$0'),
+          const SizedBox(
+            height: 3,
+          ),
+          const OrderInfoItem(title: 'Shipping', value: '\$8'),
+          const SizedBox(
+            height: 8,
+          ),
+          const Divider(
+            thickness: 2,
+            color: Color(0xFFC7C7C7),
+          ),
+          const SizedBox(height: 15,),
+        const  TotalPrice(title: 'Total',value:'\$8', )
         ],
       ),
-    );
-  }
-}
-
-class OrderInfoItem extends StatelessWidget {
-  const OrderInfoItem({super.key, required this.title, required this.value});
-  final String title,value;
-
-  @override
-  Widget build(BuildContext context) {
-    return  Row(
-      children: [
-        Text(title,
-            textAlign: TextAlign.center, style: Styles.textStyle18),
-        const Spacer(),
-         Text(
-          value,
-          textAlign: TextAlign.center,
-          style: Styles.textStyle18
-        )
-      ],
     );
   }
 }
