@@ -20,6 +20,7 @@ class PaymentMethodeListView extends StatelessWidget {
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: PaymentMethodeItem(
+              isActive: false,
               image: paymentMethodeItems[index],
             ),
           );
