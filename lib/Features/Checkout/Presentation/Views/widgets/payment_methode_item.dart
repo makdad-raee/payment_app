@@ -1,9 +1,9 @@
   import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 class PaymentMethodeItem extends StatelessWidget {
-  const PaymentMethodeItem({super.key,  this.isActive=false, required this.image});
+  const PaymentMethodeItem({super.key,  this.isActive=false});
   final bool isActive;
-  final String image;
+  
 
   @override
   Widget build(BuildContext context) {
@@ -32,9 +32,8 @@ class PaymentMethodeItem extends StatelessWidget {
           ),
           child: Center(
             child: SvgPicture.asset(
-              image,
-              height: 24,
-              fit: BoxFit.scaleDown,
+              'assets/images/cart.svg',
+              height: 32,
             ),
           ),
         ),
