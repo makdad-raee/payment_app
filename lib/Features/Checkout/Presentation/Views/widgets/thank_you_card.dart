@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:payment_app/Core/Utiles/styles.dart';
+import 'package:payment_app/Features/Checkout/Presentation/Views/widgets/card_info_widget.dart';
 import 'package:payment_app/Features/Checkout/Presentation/Views/widgets/payment_item_info.dart';
+import 'package:payment_app/Features/Checkout/Presentation/Views/widgets/total_price.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ThankYouCard extends StatelessWidget {
   const ThankYouCard({
@@ -12,7 +15,7 @@ class ThankYouCard extends StatelessWidget {
     return Container(
       width: double.infinity,
       decoration: ShapeDecoration(
-        color: const Color(0xFFD9D9D9),
+        color: const Color(0xFFEDEDED),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
         ),
@@ -45,9 +48,50 @@ class ThankYouCard extends StatelessWidget {
             height: 20,
           ),
           const PaymmentItemInfo(title: 'To', value: 'Sam Louis'),
+          const Divider(
+            thickness: 2,
+            height: 60,
+          ),
+          const TotalPrice(title: 'Total', value: '\$50.97'),
+          const SizedBox(
+            height: 30,
+          ),
+          const CardInfoWidget(),
+          const Spacer(),
+          Row(
+            children: [
+              const Icon(
+                FontAwesomeIcons.barcode,
+                size: 64,
+              ),
+              const SizedBox(
+                width: 75,
+              ),
+              Container(
+                width: 113,
+                height: 58,
+                decoration: ShapeDecoration(
+                  shape: RoundedRectangleBorder(
+                    side:
+                        const BorderSide(width: 1.50, color: Color(0xFF34A853)),
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                ),
+                child: Center(
+                  child: Text(
+                    'PAID',
+                    textAlign: TextAlign.center,
+                    style: Styles.textStyle24.copyWith(
+                      color: const Color(0xFF34A853),
+                    ),
+                  ),
+                ),
+              )
+            ],
+          ),
+        SizedBox(height:( (MediaQuery.of(context).size.height*0.2+20)/2)-29,),
         ]),
       ),
     );
   }
 }
-
