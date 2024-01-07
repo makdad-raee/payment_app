@@ -11,7 +11,7 @@ class CardInfoWidget extends StatelessWidget {
     return Container(
       width: 305,
       height: 73,
-      padding:const EdgeInsets.symmetric(horizontal: 23,vertical: 16),
+      padding: const EdgeInsets.symmetric(horizontal: 23, vertical: 16),
       decoration: ShapeDecoration(
         color: Colors.white,
         shape: RoundedRectangleBorder(
@@ -21,7 +21,7 @@ class CardInfoWidget extends StatelessWidget {
       child: Row(
         children: [
           SvgPicture.asset('assets/images/logo.svg'),
-         const SizedBox(
+          const SizedBox(
             width: 23,
           ),
           Text.rich(

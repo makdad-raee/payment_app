@@ -3,7 +3,9 @@ import 'package:payment_app/Core/Utiles/styles.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({
-    super.key, this.onTap, required this.text,
+    super.key,
+    this.onTap,
+    required this.text,
   });
   final void Function()? onTap;
   final String text;
@@ -21,7 +23,7 @@ class CustomButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(15),
           ),
         ),
-        child:  Center(
+        child: Center(
           child: Text(text,
               textAlign: TextAlign.center, style: Styles.textStyle22),
         ),

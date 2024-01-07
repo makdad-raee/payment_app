@@ -14,7 +14,7 @@ class _PaymentMethodeListViewState extends State<PaymentMethodeListView> {
     'assets/images/paypal.svg',
     'assets/images/applepay.svg'
   ];
-  int activeIndex=0;
+  int activeIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -28,13 +28,11 @@ class _PaymentMethodeListViewState extends State<PaymentMethodeListView> {
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: GestureDetector(
               onTap: () {
-                activeIndex=index;
-                setState(() {
-                  
-                });
+                activeIndex = index;
+                setState(() {});
               },
               child: PaymentMethodeItem(
-                isActive: activeIndex==index,
+                isActive: activeIndex == index,
                 image: paymentMethodeItems[index],
               ),
             ),

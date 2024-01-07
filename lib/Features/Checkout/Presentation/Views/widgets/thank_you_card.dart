@@ -89,7 +89,9 @@ class ThankYouCard extends StatelessWidget {
               )
             ],
           ),
-        SizedBox(height:( (MediaQuery.of(context).size.height*0.2+20)/2)-29,),
+          SizedBox(
+            height: ((MediaQuery.of(context).size.height * 0.2 + 20) / 2) - 29,
+          ),
         ]),
       ),
     );

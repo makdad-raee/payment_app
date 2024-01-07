@@ -7,7 +7,7 @@ class TotalPrice extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Row(
+    return Row(
       children: [
         Text(title, textAlign: TextAlign.center, style: Styles.textStyle24),
         const Spacer(),

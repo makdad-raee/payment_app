@@ -15,10 +15,10 @@ class ThankYouViewBody extends StatelessWidget {
         children: [
           const ThankYouCard(),
           Positioned(
-            left: 20+8,
-            right: 20+8,
-            bottom: MediaQuery.sizeOf(context).height * 0.2+20,
-            child:const CustomDashedLine(),
+            left: 20 + 8,
+            right: 20 + 8,
+            bottom: MediaQuery.sizeOf(context).height * 0.2 + 20,
+            child: const CustomDashedLine(),
           ),
           Positioned(
             left: -20,
@@ -40,4 +40,3 @@ class ThankYouViewBody extends StatelessWidget {
     );
   }
 }
-
