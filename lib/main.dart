@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:payment_app/Features/Checkout/Presentation/Views/my_cart_view.dart';
 
 void main() {
