@@ -1,3 +1,4 @@
+import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:payment_app/Core/Utiles/api_services.dart';
 import 'package:payment_app/Core/Utiles/apis_keys.dart';
 import 'package:payment_app/Features/Checkout/data/models/payment_intent_input_model.dart';
@@ -14,6 +15,12 @@ class StripeServices {
         var paymentIntentModel=PaymentIntentModel.fromJson(response.data);
         return paymentIntentModel;
         
+  }
+  Future initPaymentSheet({required String paymentIntentClientSecret})async{
+    Stripe.instance.initPaymentSheet(paymentSheetParameters: SetupPaymentSheetParameters(
+      paymentIntentClientSecret: paymentIntentClientSecret,
+      merchantDisplayName: 'makdad raee'
+    ));
   }
   
 }
