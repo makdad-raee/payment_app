@@ -22,5 +22,8 @@ class StripeServices {
       merchantDisplayName: 'makdad raee'
     ));
   }
+  Future displayPaymentSheet()async{
+    Stripe.instance.presentPaymentSheet();
+  }
   
 }
