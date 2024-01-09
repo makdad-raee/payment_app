@@ -6,7 +6,6 @@ import 'package:payment_app/Features/Checkout/Presentation/Views/widgets/order_i
 import 'package:payment_app/Features/Checkout/Presentation/Views/widgets/payment_method_button_sheet.dart';
 import 'package:payment_app/Features/Checkout/Presentation/Views/widgets/total_price.dart';
 import 'package:payment_app/Features/Checkout/data/repos/check_out_repo_impl.dart';
-import 'package:payment_app/Features/Checkout/data/repos/checkout_repo.dart';
 
 class MyCartViewBody extends StatelessWidget {
   const MyCartViewBody({super.key});

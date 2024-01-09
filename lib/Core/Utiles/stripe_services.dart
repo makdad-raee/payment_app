@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:payment_app/Core/Utiles/api_services.dart';
 import 'package:payment_app/Core/Utiles/apis_keys.dart';
@@ -10,6 +11,7 @@ class StripeServices {
       PaymentIntentInputModel paymentIntentInputModel) async {
     var response = await apiService.post(
         body: paymentIntentInputModel.toJson(),
+        contentType: Headers.formUrlEncodedContentType,
         url: 'https://api.stripe.com/v1/payment_intents',
         token: ApiKeys.secretKeys);
     var paymentIntentModel = PaymentIntentModel.fromJson(response.data);
@@ -17,14 +19,14 @@ class StripeServices {
   }
 
   Future initPaymentSheet({required String paymentIntentClientSecret}) async {
-    Stripe.instance.initPaymentSheet(
+   await  Stripe.instance.initPaymentSheet(
         paymentSheetParameters: SetupPaymentSheetParameters(
             paymentIntentClientSecret: paymentIntentClientSecret,
-            merchantDisplayName: 'makdad raee'));
+            merchantDisplayName: 'makdad raee'),);
   }
 
   Future displayPaymentSheet() async {
-    Stripe.instance.presentPaymentSheet();
+  await  Stripe.instance.presentPaymentSheet();
   }
 
   Future makePayment(
@@ -32,5 +34,6 @@ class StripeServices {
     var paymentIntentModel = await creatPaymentIntent(paymentIntentInputModel);
     await initPaymentSheet(
         paymentIntentClientSecret: paymentIntentModel.clientSecret!);
+        await displayPaymentSheet();
   }
 }

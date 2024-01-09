@@ -1,3 +1,5 @@
+
+
 import 'dart:developer';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -13,7 +15,10 @@ class PaymentCubit extends Cubit<PaymentState> {
     emit(PaymentLoaadingState());
     var data = await checkoutRepo.makePayment(
         paymentIntentInputModel: paymentIntentInputModel);
-    data.fold((l) => emit(PaymentErrorState(errorMessage: l.errorMessage)),
+    data.fold((l) {
+      emit(PaymentErrorState(errorMessage: l.errorMessage));
+      print(l.errorMessage.toString());
+    },
         (r) => emit(PaymentSuccesesState()));
   }
 
