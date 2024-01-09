@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:payment_app/Core/Utiles/widgets/cutom_button.dart';
-import 'package:payment_app/Features/Checkout/Presentation/Views/payments_details.dart';
+import 'package:payment_app/Features/Checkout/Presentation/Views/manger/cubit/payment_cubit.dart';
 import 'package:payment_app/Features/Checkout/Presentation/Views/widgets/order_info_item.dart';
-import 'package:payment_app/Features/Checkout/Presentation/Views/widgets/payment_method_list_view.dart';
+import 'package:payment_app/Features/Checkout/Presentation/Views/widgets/payment_method_button_sheet.dart';
 import 'package:payment_app/Features/Checkout/Presentation/Views/widgets/total_price.dart';
+import 'package:payment_app/Features/Checkout/data/repos/check_out_repo_impl.dart';
+import 'package:payment_app/Features/Checkout/data/repos/checkout_repo.dart';
 
 class MyCartViewBody extends StatelessWidget {
   const MyCartViewBody({super.key});
@@ -63,7 +66,9 @@ class MyCartViewBody extends StatelessWidget {
                     borderRadius: BorderRadius.circular(16)),
                 context: context,
                 builder: (context) {
-                  return const PaymentModalButtonSheet();
+                  return BlocProvider(
+                    create: (context) => PaymentCubit(CheckoutRepoImpl()),
+                    child: const PaymentMethodeButtonSheet());
                 },
               );
             },
@@ -77,26 +82,4 @@ class MyCartViewBody extends StatelessWidget {
   }
 }
 
-class PaymentModalButtonSheet extends StatelessWidget {
-  const PaymentModalButtonSheet({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return const Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          SizedBox(
-            height: 16,
-          ),
-          PaymentMethodeListView(),
-          SizedBox(
-            height: 32,
-          ),
-          CustomButton(text: 'Continue')
-        ],
-      ),
-    );
-  }
-}
