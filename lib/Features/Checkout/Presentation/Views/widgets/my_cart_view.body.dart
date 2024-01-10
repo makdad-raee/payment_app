@@ -66,8 +66,8 @@ class MyCartViewBody extends StatelessWidget {
                 context: context,
                 builder: (context) {
                   return BlocProvider(
-                    create: (context) => PaymentCubit(CheckoutRepoImpl()),
-                    child: const PaymentMethodeButtonSheet());
+                      create: (context) => PaymentCubit(CheckoutRepoImpl()),
+                      child: const PaymentMethodeButtonSheet());
                 },
               );
             },
@@ -80,5 +80,3 @@ class MyCartViewBody extends StatelessWidget {
     );
   }
 }
-
-

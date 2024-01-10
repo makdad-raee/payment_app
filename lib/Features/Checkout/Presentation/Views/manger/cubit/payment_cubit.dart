@@ -1,5 +1,3 @@
-
-
 import 'dart:developer';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -18,8 +16,7 @@ class PaymentCubit extends Cubit<PaymentState> {
     data.fold((l) {
       emit(PaymentErrorState(errorMessage: l.errorMessage));
       print(l.errorMessage.toString());
-    },
-        (r) => emit(PaymentSuccesesState()));
+    }, (r) => emit(PaymentSuccesesState()));
   }
 
   @override
